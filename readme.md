@@ -45,26 +45,36 @@ PythonPageLink is a static site generator that creates a personal link tree webp
    Edit `config.yml` to update your personal information and links. Example configuration:
 
    ```yaml
-   name: "King Triton"
+   name: "Vanitoo"
    picture: "assets/img/picture.jpg"
-   bio: "Programmer python and php/laravel"
+   bio: "Programmer python"
    meta:
      lang: "en"
-     description: "Programmer python and php/laravel"
-     title: "King Triton"
-     author: "King Triton"
-     siteUrl: "https://king-tri-ton.github.io/pythonpagelink/"
+     description: "Programmer python"
+     title: "Vanitoo"
+     author: "Vanitoo"
+     siteUrl: "https://vanitoo.github.io/taplink/"
    links:
      - name: "Github"
-       url: "https://github.com/king-tri-ton"
+       url: "https://github.com/vanitoo"
      - name: "Dev.to"
-       url: "https://dev.to/king_triton"
+       url: "https://dev.to"
      - name: "Patreon"
-       url: "https://www.patreon.com/king_triton"
+       url: "https://www.patreon.com"
      - name: "Telegram"
-       url: "https://t.me/king_triton"
+       url: "https://t.me"
      - name: "Instagram"
-       url: "https://www.instagram.com/king_tri_ton"
+       url: "https://www.instagram.com"
+     - name: "Youtube"
+       url: "https://www.youtube.com"
+     - name: "VK"
+       url: "https://www.vk.com"
+     - name: "RuTube"
+       url: "https://www.rutube.ru"
+     - name: "Dzen"
+       url: "https://www.dzen.ru"
+     - name: "TikTok"
+       url: "https://www.tiktor.com"
    theme: "custom"
    ```
 
@@ -79,7 +89,7 @@ PythonPageLink is a static site generator that creates a personal link tree webp
 After customization, generate your static site by running:
 
 ```bash
-python generate_site.py
+python main.py
 ```
 
 This command will create the `docs` folder with the generated files.
