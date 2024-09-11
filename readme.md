@@ -28,14 +28,14 @@ Taplink — это генератор статических сайтов, ко�
 
 ## Настройка
 
-1. **Clone the Repository**
+1. **Клонируйте репозиторий**
 
    ```bash
    git clone https://github.com/king-tri-ton/pythonpagelink.git
    cd pythonpagelink
    ```
 
-2. **Install Dependencies**
+2. **Установите зависимости**
 
    Make sure you have Python 3 and pip installed. Install the required Python packages:
 
@@ -43,11 +43,11 @@ Taplink — это генератор статических сайтов, ко�
    pip install jinja2 pyyaml
    ```
 
-## Customization
+## Персонализация
 
-1. **Configure Your Page**
+1. **Настройте вашу страницу**
 
-   Edit `config.yml` to update your personal information and links. Example configuration:
+   Отредактируйте `config.yml` чтобы обновить свою личную информацию и ссылки. Пример конфигурации:
 
    ```yaml
    name: "Vanitoo"
@@ -83,11 +83,11 @@ Taplink — это генератор статических сайтов, ко�
    theme: "custom"
    ```
 
-2. **Customize Your Theme**
+2. **Настройте свою тему**
 
-   - **CSS**: Modify `themes/custom/assets/css/styles.css` to adjust the styling of your site.
-   - **JavaScript**: Update `themes/custom/assets/js/script.js` to add or change functionality.
-   - **HTML Template**: Edit `themes/custom/index.html` for structural changes to your webpage.
+   - **CSS**: Измените  `themes/custom/assets/css/styles.css` to adjust the styling of your site.
+   - **JavaScript**: Обновите  `themes/custom/assets/js/script.js` to add or change functionality.
+   - **HTML Template**: Отредактируйте  `themes/custom/index.html` for structural changes to your webpage.
 
 ## Generate Your Site
 
@@ -99,24 +99,22 @@ python main.py
 
 This command will create the `docs` folder with the generated files.
 
-## Deploying on GitHub Pages
+## Развертывание на GitHub Pages
 
 ![steps to create a github page](https://github.com/user-attachments/assets/1ce1a9c2-f2d5-4cec-9d4b-e5ba9453cefb)
 
-1. Create a new repository on GitHub.
-2. Upload all files, including the `docs` folder, to the repository.
-3. Go to the repository’s Settings section.
-4. In the Pages section, select the `master` branch and the `/docs` folder as the source.
-5. Save changes and wait for GitHub Pages to deploy your site.
 
-Your site will now be available at `https://<username>.github.io/<repository-name>/`.
+1. Создайте новый репозиторий на GitHub.
+2. Загрузите все файлы, включая папку docs, в репозиторий.
+3. Перейдите в раздел "Settings" вашего репозитория.
+4. В разделе "Pages" выберите ветку master и папку /docs в качестве источника.
+5. Сохраните изменения и подождите, пока GitHub Pages развернет ваш сайт.
 
-You can check the final result at [king-tri-ton.github.io/pythonpagelink](https://king-tri-ton.github.io/pythonpagelink/).
+Ваш сайт теперь будет доступен по адресу 'https://<username>.github.io/<repository-name>/'
 
-## License
+Вы можете проверить конечный результат по адресу [vanitoo.github.io/taplink](https://king-tri-ton.github.io/pythonpagelink/).
 
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+## Лицензия
 
-## Contact
+Этот проект лицензирован под [MIT License](https://choosealicense.com/licenses/mit/).
 
-If you have any questions or suggestions, feel free to reach out to me via [telegram](https://t.me/king_triton).
