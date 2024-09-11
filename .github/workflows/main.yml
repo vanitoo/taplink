@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'config.yml'
-      - 'main.py'
     branches:
       - master
 
