@@ -1,27 +1,32 @@
-# Build Your Own LinkTree with Python and GitHub Pages
+# Создайте свой собственный Taplink с помощью Python и GitHub Pages
 
-This project provides a template and script for creating your own LinkTree (or Taplink) style landing page using Python and GitHub Pages. It allows you to generate a static webpage that displays links to your various social media profiles or other important sites.
+Этот проект предоставляет шаблон и скрипт для создания вашей собственной страницы в стиле Taplink с использованием Python и GitHub Pages. Он позволяет вам создать статическую веб-страницу, которая отображает ссылки на ваши различные профили в социальных сетях или другие важные сайты.
 
 ![my analog of linktree using github page](https://github.com/user-attachments/assets/5713df1f-1161-4660-9efb-cdfd53685374)
 
-## Overview
+## Обзор
 
-PythonPageLink is a static site generator that creates a personal link tree webpage. It uses Python and Jinja2 for generating HTML from a configuration file and can be easily deployed using GitHub Pages.
+Taplink — это генератор статических сайтов, который создает личную веб-страницу с деревом ссылок. Он использует Python и Jinja2 для генерации HTML из конфигурационного файла и может быть легко развернут с использованием GitHub Pages.
 
-## Features
+## Возможности
 
-- **Customizable Links**: Define your links and their descriptions in a YAML file.
-- **Personalization**: Customize your profile picture, bio, and site theme.
-- **Easy Deployment**: Host your site on GitHub Pages with simple setup instructions.
+- **Настраиваемые ссылки**: Определите свои ссылки и их описания в файле YAML.
+- **Персонализация**: Настройте свою фотографию профиля, биографию и тему сайта.
+- **Простота развертывания**: Хостинг вашего сайта на GitHub Pages с простыми инструкциями по настройке.
 
-## Project Structure
+## Структура проекта
 
 - **`config.yml`**: Configuration file for site details.
 - **`generate_site.py`**: Python script to generate the static site.
 - **`themes/custom/`**: Custom theme directory with assets, CSS, JavaScript, and the HTML template.
 - **`docs/`**: Output directory for generated site files.
 
-## Setup
+- **config.yml**: Конфигурационный файл для деталей сайта.
+- **generate_site.py**: Скрипт на Python для генерации статического сайта.
+- **themes/custom/**: Директория с пользовательской темой, содержащая ресурсы, CSS, JavaScript и HTML-шаблон.
+- **docs/**: Директория для выходных файлов сгенерированного сайта.
+
+## Настройка
 
 1. **Clone the Repository**
 
