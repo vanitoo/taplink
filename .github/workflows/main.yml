@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+on:
+  push:
+    paths:
+      - 'config.yml'
+      - 'main.py'
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install jinja2 pyyaml
+
+      - name: Run script
+        run: |
+          python generate_site.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add docs
+          git commit -m 'Update generated site'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
