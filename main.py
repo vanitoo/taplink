@@ -26,6 +26,11 @@ def load_config() -> dict:
         ) from error
 
 
+def copy_assets(source: Path, destination: Path) -> None:
+    if source.exists():
+        shutil.copytree(source, destination, dirs_exist_ok=True)
+
+
 def generate_qr_code(site_url: str) -> str | None:
     if not site_url:
         return None
@@ -43,17 +48,23 @@ def generate_qr_code(site_url: str) -> str | None:
 def main() -> None:
     config = load_config()
     theme_name = config.get("theme", "custom")
+    theme_dir = ROOT_DIR / "themes" / theme_name
+
+    if not (theme_dir / "index.html").exists():
+        raise SystemExit(f"Тема '{theme_name}' не найдена в папке themes.")
 
     OUTPUT_DIR.mkdir(exist_ok=True)
-
-    assets_source = ROOT_DIR / "themes" / theme_name / "assets"
     assets_dest = OUTPUT_DIR / "assets"
-    if assets_source.exists():
-        shutil.copytree(assets_source, assets_dest, dirs_exist_ok=True)
+
+    # Общие изображения, favicon и другие базовые файлы.
+    copy_assets(ROOT_DIR / "themes" / "custom" / "assets", assets_dest)
+    # Файлы конкретной темы имеют приоритет и перезаписывают базовые.
+    if theme_name != "custom":
+        copy_assets(theme_dir / "assets", assets_dest)
 
     config["qrCode"] = generate_qr_code(config.get("meta", {}).get("siteUrl", ""))
 
-    env = Environment(loader=FileSystemLoader(ROOT_DIR / "themes" / theme_name))
+    env = Environment(loader=FileSystemLoader(theme_dir))
     template = env.get_template("index.html")
 
     output_html = template.render(config=config)
