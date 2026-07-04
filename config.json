@@ -11,6 +11,10 @@
     "siteUrl": "https://vanitoo.github.io/taplink/",
     "ogImage": "https://vanitoo.github.io/taplink/assets/img/devops-avatar.svg"
   },
+  "author": {
+    "role": "писатель • рассказчик • создатель миров",
+    "quote": "Истории — это мосты между нами и реальностью. Я строю их из слов."
+  },
   "card": {
     "rating": 92,
     "position": "DEVOPS",
@@ -38,29 +42,34 @@
   ],
   "links": [
     {
-      "name": "GitHub",
+      "name": "Мои книги",
+      "description": "Романы, повести, сборники",
       "url": "https://github.com/vanitoo",
       "type": "link"
     },
     {
-      "name": "Telegram",
+      "name": "Рассказы",
+      "description": "Новые истории каждую неделю",
       "url": "https://t.me",
       "type": "telegram"
     },
     {
-      "name": "WhatsApp",
-      "url": "https://wa.me/79990000000",
-      "type": "whatsapp"
+      "name": "Обо мне",
+      "description": "Путь, вдохновение, творчество",
+      "url": "https://github.com/vanitoo",
+      "type": "link"
     },
     {
-      "name": "Написать на email",
+      "name": "Связаться",
+      "description": "Для предложений и сотрудничества",
       "url": "mailto:hello@example.com",
       "type": "email"
     },
     {
-      "name": "Позвонить",
-      "url": "tel:+79990000000",
-      "type": "call"
+      "name": "Поддержать автора",
+      "description": "Спасибо за вашу поддержку",
+      "url": "https://patreon.com",
+      "type": "link"
     }
   ],
   "theme": "football-card"
