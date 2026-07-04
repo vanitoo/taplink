@@ -11,6 +11,19 @@
     "siteUrl": "https://vanitoo.github.io/taplink/",
     "ogImage": "https://vanitoo.github.io/taplink/assets/img/picture.jpg"
   },
+  "card": {
+    "rating": 92,
+    "position": "DEVOPS",
+    "club": "OPEN SOURCE",
+    "stats": [
+      { "label": "DEV", "value": 95 },
+      { "label": "OPS", "value": 94 },
+      { "label": "SEC", "value": 88 },
+      { "label": "AUTO", "value": 97 },
+      { "label": "AI", "value": 86 },
+      { "label": "WORK", "value": 80 }
+    ]
+  },
   "socials": [
     {
       "name": "GitHub",
