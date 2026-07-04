@@ -4,47 +4,50 @@
   "bio": "DevOps and Programmer",
   "meta": {
     "lang": "en",
+    "locale": "en_US",
     "description": "DevOps and Programmer",
     "title": "Vanitoo",
     "author": "Vanitoo",
-    "siteUrl": "https://vanitoo.github.io/taplink/"
+    "siteUrl": "https://vanitoo.github.io/taplink/",
+    "ogImage": "https://vanitoo.github.io/taplink/assets/img/picture.jpg"
   },
-  "links": [
+  "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/vanitoo"
-    },
-    {
-      "name": "Dev.to",
-      "url": "https://dev.to"
-    },
-    {
-      "name": "Patreon",
-      "url": "https://patreon.com"
+      "url": "https://github.com/vanitoo",
+      "icon": "GH"
     },
     {
       "name": "Telegram",
-      "url": "https://t.me"
+      "url": "https://t.me",
+      "icon": "TG"
+    }
+  ],
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/vanitoo",
+      "type": "link"
     },
     {
-      "name": "Instagram",
-      "url": "https://instagram.com"
+      "name": "Telegram",
+      "url": "https://t.me",
+      "type": "telegram"
     },
     {
-      "name": "YouTube",
-      "url": "https://youtube.com"
+      "name": "WhatsApp",
+      "url": "https://wa.me/79990000000",
+      "type": "whatsapp"
     },
     {
-      "name": "VK",
-      "url": "https://vk.com"
+      "name": "Написать на email",
+      "url": "mailto:hello@example.com",
+      "type": "email"
     },
     {
-      "name": "Dzen",
-      "url": "https://dzen.ru"
-    },
-    {
-      "name": "TikTok",
-      "url": "https://tiktok.com"
+      "name": "Позвонить",
+      "url": "tel:+79990000000",
+      "type": "call"
     }
   ],
   "theme": "custom"
