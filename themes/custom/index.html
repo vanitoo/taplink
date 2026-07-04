@@ -1,39 +1,85 @@
 <!DOCTYPE html>
-<html lang="{{ config.meta.lang }}">
+<html lang="{{ config.meta.lang | default('ru') }}" data-theme="auto">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="{{ config.meta.description }}">
-    <title>{{ config.meta.title }}</title>
     <meta name="author" content="{{ config.meta.author }}">
+    <meta name="theme-color" content="#111827">
+    <title>{{ config.meta.title }}</title>
     <link rel="canonical" href="{{ config.meta.siteUrl }}">
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ config.picture }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.meta.siteUrl }}">
     <meta property="og:title" content="{{ config.meta.title }}">
     <meta property="og:site_name" content="{{ config.meta.title }}">
     <meta property="og:description" content="{{ config.meta.description }}">
-    <meta property="og:locale" content="{{ config.meta.lang }}">
+    <meta property="og:locale" content="{{ config.meta.locale | default('ru_RU') }}">
+    {% if config.meta.ogImage %}<meta property="og:image" content="{{ config.meta.ogImage }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ config.meta.title }}">
     <meta name="twitter:description" content="{{ config.meta.description }}">
+    {% if config.meta.ogImage %}<meta name="twitter:image" content="{{ config.meta.ogImage }}">{% endif %}
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <img src="assets/img/picture.jpg" alt="Picture" class="avatar">
-        <h1>{{ config.name }}</h1>
-        <small class="bio">{{ config.bio }}</small>
-    </header>
-    <main>
-        <section class="links">
-            {% for link in config.links %}
-            <a class="link-item" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
-                <p>{{ link.name }}</p>
-            </a>
-            {% endfor %}
-        </section>
-    </main>
-    <footer>
-        <small>&copy; <span class="year"></span> {{ config.meta.author }}</small>
-    </footer>
+    <div class="page-shell">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+
+        <header class="profile">
+            <img src="{{ config.picture }}" alt="Фото {{ config.name }}" class="avatar" width="128" height="128">
+            <h1>{{ config.name }}</h1>
+            <p class="bio">{{ config.bio }}</p>
+
+            {% if config.socials %}
+            <nav class="socials" aria-label="Социальные сети">
+                {% for social in config.socials %}
+                <a class="social-link" href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.name }}" title="{{ social.name }}">
+                    <span aria-hidden="true">{{ social.icon | default('↗') }}</span>
+                </a>
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </header>
+
+        <main>
+            <section class="links" aria-label="Ссылки">
+                {% for link in config.links %}
+                <a class="link-item link-{{ link.type | default('link') }}" href="{{ link.url }}" {% if link.type not in ['email', 'call'] %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                    <span class="link-icon" aria-hidden="true">
+                        {% if link.type == 'telegram' %}✈
+                        {% elif link.type == 'whatsapp' %}◔
+                        {% elif link.type == 'email' %}✉
+                        {% elif link.type == 'call' %}☎
+                        {% else %}↗{% endif %}
+                    </span>
+                    <span class="link-label">{{ link.name }}</span>
+                    <span class="link-arrow" aria-hidden="true">›</span>
+                </a>
+                {% endfor %}
+            </section>
+
+            {% if config.qrCode %}
+            <section class="qr-card" aria-label="QR-код страницы">
+                <img src="{{ config.qrCode }}" alt="QR-код на страницу {{ config.name }}" loading="lazy">
+                <div>
+                    <strong>Открыть визитку</strong>
+                    <p>Наведите камеру на QR-код</p>
+                </div>
+            </section>
+            {% endif %}
+        </main>
+
+        <footer>
+            <small>© <span class="year"></span> {{ config.meta.author }}</small>
+        </footer>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
