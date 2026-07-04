@@ -18,6 +18,7 @@
     <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+    {% set author_data = config.get('author', {}) %}
     <main class="book-stage">
         <section class="book-card" aria-label="Авторская визитка">
             <div class="page-mark page-mark-left"></div>
@@ -27,8 +28,8 @@
                 <img src="{{ config.picture }}" alt="Фото {{ config.name }}" class="portrait">
                 <div class="ornament">❧</div>
                 <h1>{{ config.name }}</h1>
-                <p class="role">{{ config.author.role | default('писатель • рассказчик • создатель миров') }}</p>
-                <blockquote>{{ config.author.quote | default(config.bio) }}</blockquote>
+                <p class="role">{{ author_data.get('role', 'писатель • рассказчик • создатель миров') }}</p>
+                <blockquote>{{ author_data.get('quote', config.bio) }}</blockquote>
             </header>
 
             <nav class="book-links" aria-label="Ссылки автора">
