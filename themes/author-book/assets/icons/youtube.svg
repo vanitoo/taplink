@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YouTube">
+  <defs><radialGradient id="bg" cx="35%" cy="25%" r="75%"><stop offset="0" stop-color="#7a563f"/><stop offset="1" stop-color="#3c2418"/></radialGradient></defs>
+  <circle cx="48" cy="48" r="43" fill="url(#bg)" stroke="#ead7b4" stroke-width="3"/>
+  <circle cx="48" cy="48" r="37" fill="none" stroke="#9c7b5e" stroke-width="2" opacity=".65"/>
+  <rect x="24" y="31" width="48" height="34" rx="9" fill="#f8ead2"/>
+  <path d="M44 40v16l15-8-15-8Z" fill="#5a3828"/>
+</svg>
