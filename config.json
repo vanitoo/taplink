@@ -29,8 +29,10 @@
     ]
   },
   "socials": [
-    {"name":"GitHub","url":"https://github.com/vanitoo","icon":"GH"},
-    {"name":"Telegram","url":"https://t.me","icon":"TG"}
+    {"name":"Telegram","url":"https://t.me","icon":"telegram"},
+    {"name":"ВКонтакте","url":"https://vk.com","icon":"vk"},
+    {"name":"YouTube","url":"https://youtube.com","icon":"youtube"},
+    {"name":"Дзен","url":"https://dzen.ru","icon":"dzen"}
   ],
   "links": [
     {"name":"Мои книги","description":"Романы, повести, сборники","url":"https://github.com/vanitoo","type":"link"},
