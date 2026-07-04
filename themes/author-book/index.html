@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ config.meta.lang | default('ru') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{{ config.meta.description }}">
+    <meta name="author" content="{{ config.meta.author }}">
+    <meta name="theme-color" content="#efe2c7">
+    <title>{{ config.meta.title }}</title>
+    <link rel="canonical" href="{{ config.meta.siteUrl }}">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.meta.siteUrl }}">
+    <meta property="og:title" content="{{ config.meta.title }}">
+    <meta property="og:description" content="{{ config.meta.description }}">
+    {% if config.meta.ogImage %}<meta property="og:image" content="{{ config.meta.ogImage }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <main class="book-stage">
+        <section class="book-card" aria-label="Авторская визитка">
+            <div class="page-mark page-mark-left"></div>
+            <div class="page-mark page-mark-right"></div>
+
+            <header class="author-header">
+                <img src="{{ config.picture }}" alt="Фото {{ config.name }}" class="portrait">
+                <div class="ornament">❧</div>
+                <h1>{{ config.name }}</h1>
+                <p class="role">{{ config.author.role | default('писатель • рассказчик • создатель миров') }}</p>
+                <blockquote>{{ config.author.quote | default(config.bio) }}</blockquote>
+            </header>
+
+            <nav class="book-links" aria-label="Ссылки автора">
+                {% for link in config.links %}
+                <a class="book-link book-link-{{ link.type | default('link') }}" href="{{ link.url }}" {% if link.type not in ['email', 'call'] %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                    <span class="book-icon" aria-hidden="true">
+                        {% if link.type == 'telegram' %}✦
+                        {% elif link.type == 'whatsapp' %}♡
+                        {% elif link.type == 'email' %}✉
+                        {% elif link.type == 'call' %}☎
+                        {% else %}☞{% endif %}
+                    </span>
+                    <span class="book-text">
+                        <strong>{{ link.name }}</strong>
+                        <small>{{ link.description | default('Открыть раздел') }}</small>
+                    </span>
+                    <span class="book-arrow" aria-hidden="true">›</span>
+                </a>
+                {% endfor %}
+            </nav>
+
+            {% if config.socials %}
+            <footer class="author-footer">
+                <p>Следите за новинками</p>
+                <nav class="socials" aria-label="Социальные сети">
+                    {% for social in config.socials %}
+                    <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.name }}">{{ social.icon | default('✦') }}</a>
+                    {% endfor %}
+                </nav>
+            </footer>
+            {% endif %}
+        </section>
+
+        {% if config.qrCode %}
+        <aside class="qr-note" aria-label="QR-код страницы">
+            <img src="{{ config.qrCode }}" alt="QR-код страницы {{ config.name }}">
+            <p>Отсканируй<br>и сохрани страницу</p>
+        </aside>
+        {% endif %}
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
