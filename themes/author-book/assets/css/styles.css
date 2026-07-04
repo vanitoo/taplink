@@ -1,0 +1,243 @@
+:root {
+  --paper: #efe2c7;
+  --paper-light: #fbf1dc;
+  --ink: #2b2118;
+  --muted: #7b6048;
+  --accent: #7f3f2a;
+  --line: rgba(91, 67, 45, 0.24);
+  --shadow: rgba(45, 28, 12, 0.30);
+}
+
+* { box-sizing: border-box; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 24% 10%, rgba(255, 247, 222, .55), transparent 26%),
+    linear-gradient(135deg, #24180f, #5f3a22 42%, #2b1b12);
+}
+
+.book-stage {
+  width: min(100%, 720px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: max(26px, env(safe-area-inset-top)) 16px max(26px, env(safe-area-inset-bottom));
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.book-card {
+  position: relative;
+  overflow: hidden;
+  padding: 34px clamp(20px, 6vw, 48px) 28px;
+  border: 1px solid rgba(255, 245, 216, .45);
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(100, 67, 35, .10), transparent 8%, transparent 92%, rgba(100, 67, 35, .12)),
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.50), transparent 34%),
+    var(--paper);
+  box-shadow: 0 28px 84px var(--shadow), inset 0 0 0 1px rgba(80, 50, 22, .10);
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  pointer-events: none;
+}
+.book-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(63, 41, 23, .12) 0.8px, transparent 0.8px),
+    linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  background-size: 12px 12px, 100% 100%;
+  opacity: .30;
+  pointer-events: none;
+}
+.page-mark {
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  width: 24px;
+  border-radius: 16px;
+  background: rgba(70, 46, 25, .08);
+}
+.page-mark-left { left: 18px; }
+.page-mark-right { right: 18px; }
+
+.author-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.portrait {
+  width: 132px;
+  height: 132px;
+  display: block;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 250, 232, .88);
+  box-shadow: 0 12px 28px rgba(54, 33, 15, .22);
+  filter: sepia(.18) contrast(.98);
+}
+.ornament {
+  width: 170px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 24px;
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 10vw, 58px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+.role {
+  margin: 12px 0 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 13px;
+  font-weight: 700;
+}
+blockquote {
+  max-width: 430px;
+  margin: 20px auto 26px;
+  color: #4b3728;
+  font-size: 18px;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.book-links {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+}
+.book-link {
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: 42px 1fr 18px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  color: var(--ink);
+  background: rgba(255, 249, 232, .36);
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.42);
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.book-link:hover,
+.book-link:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 249, 232, .62);
+  border-color: rgba(127, 63, 42, .40);
+  outline: none;
+}
+.book-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--accent);
+  font-size: 24px;
+}
+.book-text strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.1;
+}
+.book-text small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+}
+.book-arrow {
+  color: var(--accent);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.author-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+.author-footer p { margin: 0 0 12px; }
+.socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.socials a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--paper-light);
+  background: #5a3828;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.qr-note {
+  justify-self: center;
+  width: min(100%, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255, 245, 216, .26);
+  border-radius: 18px;
+  color: var(--paper-light);
+  background: rgba(22, 13, 8, .58);
+  backdrop-filter: blur(10px);
+}
+.qr-note img {
+  width: 82px;
+  height: 82px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fff;
+}
+.qr-note p { margin: 0; line-height: 1.35; }
+
+@media (max-width: 520px) {
+  .book-stage { padding-left: 10px; padding-right: 10px; }
+  .book-card { padding-top: 26px; }
+  .portrait { width: 104px; height: 104px; }
+  blockquote { font-size: 16px; }
+  .book-link { grid-template-columns: 34px 1fr 16px; min-height: 62px; padding: 10px 12px; }
+  .book-icon { width: 34px; height: 34px; font-size: 21px; }
+}
