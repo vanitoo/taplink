@@ -1,6 +1,6 @@
 {
   "name": "Vanitoo",
-  "picture": "assets/img/picture.jpg",
+  "picture": "assets/img/devops-avatar.svg",
   "bio": "DevOps and Programmer",
   "meta": {
     "lang": "en",
@@ -9,7 +9,7 @@
     "title": "Vanitoo",
     "author": "Vanitoo",
     "siteUrl": "https://vanitoo.github.io/taplink/",
-    "ogImage": "https://vanitoo.github.io/taplink/assets/img/picture.jpg"
+    "ogImage": "https://vanitoo.github.io/taplink/assets/img/devops-avatar.svg"
   },
   "card": {
     "rating": 92,
