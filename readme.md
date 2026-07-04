@@ -1,6 +1,6 @@
 # Taplink
 
-Self-hosted статическая страница ссылок в стиле Link-in-bio: YAML-конфигурация → Python/Jinja2 → готовый сайт для GitHub Pages.
+Self-hosted статическая страница ссылок в стиле Link-in-bio: `config.json` → Python/Jinja2 → готовый сайт для GitHub Pages.
 
 Без базы данных, CMS, подписки и набора микросервисов, который обычно появляется там, где человеку просто нужно разместить пять ссылок.
 
@@ -9,7 +9,8 @@ Self-hosted статическая страница ссылок в стиле L
 ## Возможности
 
 - Статическая страница ссылок с профилем, описанием и кнопками.
-- Настройка через один файл `config.yml`.
+- Настройка через один файл `config.json`.
+- JSON не зависит от отступов: редактируется даже обычным Блокнотом.
 - Шаблоны на Jinja2 и кастомная тема.
 - Сборка локально или автоматически через GitHub Actions.
 - Публикация на GitHub Pages без отдельного сервера.
@@ -41,35 +42,37 @@ python main.py
 
 После сборки готовая страница появится в `docs/index.html`.
 
-## Настройка
+## Настройка ссылок
 
-Скопируйте пример конфигурации:
+Откройте в Блокноте файл `config.json` в корне проекта. Все данные страницы находятся там.
 
-```bash
-cp config.example.yml config.yml
+Чтобы изменить подпись или адрес кнопки, замените значения после `name` и `url`:
+
+```json
+{
+  "name": "Telegram",
+  "url": "https://t.me/username"
+}
 ```
 
-На Windows можно просто открыть `config.example.yml`, сохранить копию как `config.yml` и заполнить данные.
+Чтобы добавить новую кнопку, скопируйте предыдущий блок ссылки, вставьте его ниже через запятую и поменяйте данные:
 
-Пример:
-
-```yaml
-name: "Your name"
-picture: "assets/img/picture.jpg"
-bio: "DevOps engineer, creator and problem solver"
-meta:
-  lang: "ru"
-  description: "Personal link page"
-  title: "Your name"
-  author: "Your name"
-  siteUrl: "https://username.github.io/taplink/"
-links:
-  - name: "Telegram"
-    url: "https://t.me/username"
-  - name: "GitHub"
-    url: "https://github.com/username"
-theme: "custom"
+```json
+"links": [
+  {
+    "name": "Telegram",
+    "url": "https://t.me/username"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/username"
+  }
+]
 ```
+
+Важно: запятая нужна **между** блоками, но не после последнего. Если допустить ошибку, генератор точно покажет номер строки и символ, а не будет молча делать вид, что всё прекрасно.
+
+Для чистого старта используйте `config.example.json` как образец.
 
 ### Тема
 
@@ -96,8 +99,8 @@ https://<username>.github.io/taplink/
 ## Структура проекта
 
 ```text
-├── config.yml                 # личные данные и ссылки
-├── config.example.yml         # безопасный пример конфигурации
+├── config.json                # личные данные и ссылки
+├── config.example.json        # безопасный пример конфигурации
 ├── main.py                    # генератор статической страницы
 ├── requirements.txt           # Python-зависимости
 ├── themes/custom/             # шаблон, стили и assets
@@ -110,6 +113,7 @@ https://<username>.github.io/taplink/
 ### v0.2 — Project foundation
 
 - [x] Актуальная документация.
+- [x] JSON-конфигурация, удобная для ручного редактирования.
 - [x] Изолированные Python-зависимости.
 - [x] Пример конфигурации.
 - [x] `.gitignore` и MIT License.
