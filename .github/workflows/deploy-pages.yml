@@ -45,6 +45,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # Re-run after transient Pages deployment failure.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
