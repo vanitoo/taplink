@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ config.meta.lang | default('ru') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{{ config.meta.description }}">
+    <meta name="author" content="{{ config.meta.author }}">
+    <meta name="theme-color" content="#14120a">
+    <title>{{ config.meta.title }}</title>
+    <link rel="canonical" href="{{ config.meta.siteUrl }}">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.meta.siteUrl }}">
+    <meta property="og:title" content="{{ config.meta.title }}">
+    <meta property="og:description" content="{{ config.meta.description }}">
+    {% if config.meta.ogImage %}<meta property="og:image" content="{{ config.meta.ogImage }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <main class="arena">
+        <section class="player-card" aria-label="Карточка профиля">
+            <div class="card-shine"></div>
+            <div class="card-top">
+                <div class="rating-block">
+                    <strong class="rating">{{ config.card.rating | default(92) }}</strong>
+                    <span class="position">{{ config.card.position | default('DEV') }}</span>
+                </div>
+                <div class="club">{{ config.card.club | default('OPEN SOURCE') }}</div>
+            </div>
+
+            <div class="portrait-wrap">
+                <img src="{{ config.picture }}" alt="Фото {{ config.name }}" class="portrait">
+            </div>
+
+            <div class="card-name">{{ config.name }}</div>
+            <div class="card-bio">{{ config.bio }}</div>
+
+            <div class="stats">
+                {% for stat in config.card.stats %}
+                <div class="stat">
+                    <strong>{{ stat.value }}</strong>
+                    <span>{{ stat.label }}</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% if config.socials %}
+            <nav class="socials" aria-label="Социальные сети">
+                {% for social in config.socials %}
+                <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.name }}">{{ social.icon | default('↗') }}</a>
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </section>
+
+        <section class="actions" aria-label="Контакты">
+            {% for link in config.links %}
+            <a class="action action-{{ link.type | default('link') }}" href="{{ link.url }}" {% if link.type not in ['email', 'call'] %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                <span>{{ link.name }}</span>
+                <strong>›</strong>
+            </a>
+            {% endfor %}
+        </section>
+
+        {% if config.qrCode %}
+        <section class="qr-card" aria-label="QR-код страницы">
+            <img src="{{ config.qrCode }}" alt="QR-код на страницу {{ config.name }}">
+            <p>Сканируй карточку</p>
+        </section>
+        {% endif %}
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
