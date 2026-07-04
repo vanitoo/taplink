@@ -4,24 +4,22 @@
   "bio": "DevOps engineer, creator and problem solver",
   "meta": {
     "lang": "ru",
+    "locale": "ru_RU",
     "description": "Personal link page",
     "title": "Your name",
     "author": "Your name",
-    "siteUrl": "https://username.github.io/taplink/"
+    "siteUrl": "https://username.github.io/taplink/",
+    "ogImage": "https://username.github.io/taplink/assets/img/picture.jpg"
   },
+  "socials": [
+    { "name": "Telegram", "url": "https://t.me/username", "icon": "TG" },
+    { "name": "GitHub", "url": "https://github.com/username", "icon": "GH" }
+  ],
   "links": [
-    {
-      "name": "Telegram",
-      "url": "https://t.me/username"
-    },
-    {
-      "name": "GitHub",
-      "url": "https://github.com/username"
-    },
-    {
-      "name": "Email",
-      "url": "mailto:hello@example.com"
-    }
+    { "name": "Telegram", "url": "https://t.me/username", "type": "telegram" },
+    { "name": "WhatsApp", "url": "https://wa.me/79990000000", "type": "whatsapp" },
+    { "name": "Email", "url": "mailto:hello@example.com", "type": "email" },
+    { "name": "Call", "url": "tel:+79990000000", "type": "call" }
   ],
   "theme": "custom"
 }
