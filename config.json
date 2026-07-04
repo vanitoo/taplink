@@ -1,0 +1,51 @@
+{
+  "name": "Vanitoo",
+  "picture": "assets/img/picture.jpg",
+  "bio": "DevOps and Programmer",
+  "meta": {
+    "lang": "en",
+    "description": "DevOps and Programmer",
+    "title": "Vanitoo",
+    "author": "Vanitoo",
+    "siteUrl": "https://vanitoo.github.io/taplink/"
+  },
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/vanitoo"
+    },
+    {
+      "name": "Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "name": "Patreon",
+      "url": "https://patreon.com"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com"
+    },
+    {
+      "name": "VK",
+      "url": "https://vk.com"
+    },
+    {
+      "name": "Dzen",
+      "url": "https://dzen.ru"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://tiktok.com"
+    }
+  ],
+  "theme": "custom"
+}
