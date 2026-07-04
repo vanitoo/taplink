@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ config.meta.lang | default('ru') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{{ config.meta.description }}">
+    <meta name="author" content="{{ config.meta.author }}">
+    <meta name="theme-color" content="#030806">
+    <title>{{ config.meta.title }}</title>
+    <link rel="canonical" href="{{ config.meta.siteUrl }}">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.meta.siteUrl }}">
+    <meta property="og:title" content="{{ config.meta.title }}">
+    <meta property="og:description" content="{{ config.meta.description }}">
+    {% if config.meta.ogImage %}<meta property="og:image" content="{{ config.meta.ogImage }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <canvas id="code-rain" aria-hidden="true"></canvas>
+    <main class="console-shell">
+        <section class="terminal" aria-label="Профиль в терминале">
+            <div class="terminal-bar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot amber"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">root@{{ config.name | lower | replace(' ', '-') }}:~</span>
+            </div>
+
+            <div class="terminal-body">
+                <p class="line dim"><span class="prompt">$</span> whoami</p>
+                <div class="identity">
+                    <img src="{{ config.picture }}" alt="Аватар {{ config.name }}" class="avatar">
+                    <div>
+                        <h1>{{ config.name }}</h1>
+                        <p class="bio">{{ config.bio }}</p>
+                        <p class="status"><span class="status-dot"></span> system online</p>
+                    </div>
+                </div>
+
+                <p class="line"><span class="prompt">$</span> ls -la ./links</p>
+                <nav class="command-list" aria-label="Ссылки">
+                    {% for link in config.links %}
+                    <a class="command-link command-{{ link.type | default('link') }}" href="{{ link.url }}" {% if link.type not in ['email', 'call'] %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                        <span class="command-prefix">{{ '%02d' | format(loop.index) }}</span>
+                        <span class="command-name">./{{ link.name | lower | replace(' ', '-') }}</span>
+                        <span class="command-open">open ↗</span>
+                    </a>
+                    {% endfor %}
+                </nav>
+
+                {% if config.socials %}
+                <p class="line"><span class="prompt">$</span> network --social</p>
+                <nav class="socials" aria-label="Социальные сети">
+                    {% for social in config.socials %}
+                    <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.name }}">
+                        <span class="social-mark">{{ social.icon | default('>_') }}</span>{{ social.name }}
+                    </a>
+                    {% endfor %}
+                </nav>
+                {% endif %}
+
+                {% if config.qrCode %}
+                <div class="qr-row">
+                    <img src="{{ config.qrCode }}" alt="QR-код страницы {{ config.name }}">
+                    <p><span class="prompt">$</span> scan --connect<br><span class="dim">Открой профиль с телефона</span></p>
+                </div>
+                {% endif %}
+
+                <p class="cursor-line"><span class="prompt">$</span> <span class="cursor"></span></p>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
