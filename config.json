@@ -20,57 +20,24 @@
     "position": "DEVOPS",
     "club": "OPEN SOURCE",
     "stats": [
-      { "label": "DEV", "value": 95 },
-      { "label": "OPS", "value": 94 },
-      { "label": "SEC", "value": 88 },
-      { "label": "AUTO", "value": 97 },
-      { "label": "AI", "value": 86 },
-      { "label": "WORK", "value": 80 }
+      {"label":"DEV","value":95},
+      {"label":"OPS","value":94},
+      {"label":"SEC","value":88},
+      {"label":"AUTO","value":97},
+      {"label":"AI","value":86},
+      {"label":"WORK","value":80}
     ]
   },
   "socials": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com/vanitoo",
-      "icon": "GH"
-    },
-    {
-      "name": "Telegram",
-      "url": "https://t.me",
-      "icon": "TG"
-    }
+    {"name":"GitHub","url":"https://github.com/vanitoo","icon":"GH"},
+    {"name":"Telegram","url":"https://t.me","icon":"TG"}
   ],
   "links": [
-    {
-      "name": "Мои книги",
-      "description": "Романы, повести, сборники",
-      "url": "https://github.com/vanitoo",
-      "type": "link"
-    },
-    {
-      "name": "Рассказы",
-      "description": "Новые истории каждую неделю",
-      "url": "https://t.me",
-      "type": "telegram"
-    },
-    {
-      "name": "Обо мне",
-      "description": "Путь, вдохновение, творчество",
-      "url": "https://github.com/vanitoo",
-      "type": "link"
-    },
-    {
-      "name": "Связаться",
-      "description": "Для предложений и сотрудничества",
-      "url": "mailto:hello@example.com",
-      "type": "email"
-    },
-    {
-      "name": "Поддержать автора",
-      "description": "Спасибо за вашу поддержку",
-      "url": "https://patreon.com",
-      "type": "link"
-    }
+    {"name":"Мои книги","description":"Романы, повести, сборники","url":"https://github.com/vanitoo","type":"link"},
+    {"name":"Рассказы","description":"Новые истории каждую неделю","url":"https://t.me","type":"telegram"},
+    {"name":"Обо мне","description":"Путь, вдохновение, творчество","url":"https://github.com/vanitoo","type":"link"},
+    {"name":"Связаться","description":"Для предложений и сотрудничества","url":"mailto:hello@example.com","type":"email"},
+    {"name":"Поддержать автора","description":"Спасибо за вашу поддержку","url":"https://patreon.com","type":"link"}
   ],
-  "theme": "football-card"
+  "theme":"author-book"
 }
