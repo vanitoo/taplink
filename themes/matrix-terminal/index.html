@@ -25,9 +25,8 @@
                 <span class="terminal-dot red"></span>
                 <span class="terminal-dot amber"></span>
                 <span class="terminal-dot green"></span>
-                <span class="terminal-title">root@{{ config.name | lower | replace(' ', '-') }}:~</span>
+                <span class="terminal-title">root@vanitoo:~</span>
             </div>
-
             <div class="terminal-body">
                 <p class="line dim"><span class="prompt">$</span> whoami</p>
                 <div class="identity">
@@ -38,18 +37,16 @@
                         <p class="status"><span class="status-dot"></span> system online</p>
                     </div>
                 </div>
-
                 <p class="line"><span class="prompt">$</span> ls -la ./links</p>
                 <nav class="command-list" aria-label="Ссылки">
                     {% for link in config.links %}
                     <a class="command-link command-{{ link.type | default('link') }}" href="{{ link.url }}" {% if link.type not in ['email', 'call'] %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                        <span class="command-prefix">{{ '%02d' | format(loop.index) }}</span>
-                        <span class="command-name">./{{ link.name | lower | replace(' ', '-') }}</span>
+                        <span class="command-prefix">0{{ loop.index }}</span>
+                        <span class="command-name">./{{ link.name }}</span>
                         <span class="command-open">open ↗</span>
                     </a>
                     {% endfor %}
                 </nav>
-
                 {% if config.socials %}
                 <p class="line"><span class="prompt">$</span> network --social</p>
                 <nav class="socials" aria-label="Социальные сети">
@@ -60,14 +57,12 @@
                     {% endfor %}
                 </nav>
                 {% endif %}
-
                 {% if config.qrCode %}
                 <div class="qr-row">
                     <img src="{{ config.qrCode }}" alt="QR-код страницы {{ config.name }}">
                     <p><span class="prompt">$</span> scan --connect<br><span class="dim">Открой профиль с телефона</span></p>
                 </div>
                 {% endif %}
-
                 <p class="cursor-line"><span class="prompt">$</span> <span class="cursor"></span></p>
             </div>
         </section>
