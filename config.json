@@ -1,19 +1,15 @@
 {
   "name": "Vanitoo",
   "picture": "assets/img/devops-avatar.svg",
-  "bio": "DevOps and Programmer",
+  "bio": "DevOps engineer. Python automation, infrastructure, bots, monitoring and practical tools that make servers behave like adults.",
   "meta": {
-    "lang": "en",
-    "locale": "en_US",
-    "description": "DevOps and Programmer",
-    "title": "Vanitoo",
+    "lang": "ru",
+    "locale": "ru_RU",
+    "description": "DevOps, Python automation, infrastructure and open-source tools",
+    "title": "Vanitoo — DevOps / Python / Automation",
     "author": "Vanitoo",
     "siteUrl": "https://vanitoo.github.io/taplink/",
     "ogImage": "https://vanitoo.github.io/taplink/assets/img/devops-avatar.svg"
-  },
-  "author": {
-    "role": "писатель • рассказчик • создатель миров",
-    "quote": "Истории — это мосты между нами и реальностью. Я строю их из слов."
   },
   "card": {
     "rating": 92,
@@ -29,17 +25,15 @@
     ]
   },
   "socials": [
-    {"name":"Telegram","url":"https://t.me","icon":"telegram"},
-    {"name":"ВКонтакте","url":"https://vk.com","icon":"vk"},
-    {"name":"YouTube","url":"https://youtube.com","icon":"youtube"},
-    {"name":"Дзен","url":"https://dzen.ru","icon":"dzen"}
+    {"name":"GitHub","url":"https://github.com/vanitoo","icon":"GH"},
+    {"name":"Telegram","url":"https://t.me","icon":"TG"}
   ],
   "links": [
-    {"name":"Мои книги","description":"Романы, повести, сборники","url":"https://github.com/vanitoo","type":"link"},
-    {"name":"Рассказы","description":"Новые истории каждую неделю","url":"https://t.me","type":"telegram"},
-    {"name":"Обо мне","description":"Путь, вдохновение, творчество","url":"https://github.com/vanitoo","type":"link"},
-    {"name":"Связаться","description":"Для предложений и сотрудничества","url":"mailto:hello@example.com","type":"email"},
-    {"name":"Поддержать автора","description":"Спасибо за вашу поддержку","url":"https://patreon.com","type":"link"}
+    {"name":"GitHub","description":"Open-source projects and code","url":"https://github.com/vanitoo","type":"link"},
+    {"name":"Telegram","description":"Contact and updates","url":"https://t.me","type":"telegram"},
+    {"name":"DevOps projects","description":"Infrastructure, automation, bots","url":"https://github.com/vanitoo","type":"link"},
+    {"name":"Email","description":"Work and collaboration","url":"mailto:hello@example.com","type":"email"},
+    {"name":"Support","description":"Sponsor tools and experiments","url":"https://github.com/sponsors/vanitoo","type":"link"}
   ],
-  "theme":"author-book"
+  "theme":"matrix-terminal"
 }
